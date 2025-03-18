@@ -7,27 +7,15 @@
 
             while (true)
             {
-                Console.Clear();
-                Console.WriteLine("-------------------------------------");
-                Console.WriteLine("Jogo de Adivinhação");
-                Console.WriteLine("-------------------------------------");
-
-                Console.WriteLine("Escolha um nível de dificuldade:");
-                Console.WriteLine("-------------------------------------");
-                Console.WriteLine("1 - Fácil (10 tentativas)");
-                Console.WriteLine("2 - Normal (5 tentativas)");
-                Console.WriteLine("3 - Difícil (3 tentativas)");
-
                 int totalDeTentativas = 0;
+                
+                string opcaoDificuldade = ExibirMenu();
 
-                Console.Write("Digite sua escolha de dificuldade: ");
-                string opcaoDificuldade = Console.ReadLine();
-
-                if (opcaoDificuldade == "1")
+                if (OpcaoUmForEscolhida(opcaoDificuldade))
                     totalDeTentativas = 10;
-                else if (opcaoDificuldade == "2")
+                else if (OpcaoDoisFoiEscolhida(opcaoDificuldade))
                     totalDeTentativas = 5;
-                else if (opcaoDificuldade == "3") 
+                else if (OpcaoTresFoiEscolhida(opcaoDificuldade)) 
                     totalDeTentativas = 3;    
 
                 // gerar um número secreto aleatório
@@ -86,6 +74,46 @@
                 if (opcaoContinuar != "S")
                     break;
             }
+        }
+
+        static bool OpcaoUmForEscolhida(string opcao)
+        {
+            bool opcaoUmFoiEscolhida = opcao == "1";
+
+            return opcaoUmFoiEscolhida;
+        }
+
+        static bool OpcaoDoisFoiEscolhida(string opcao)
+        {
+            bool opcaoDoisFoiEscolhida = opcao == "2";
+
+            return opcaoDoisFoiEscolhida;
+        }
+
+        static bool OpcaoTresFoiEscolhida(string opcao)
+        {
+            bool opcaoTresFoiEscolhida = opcao == "3";
+
+            return opcaoTresFoiEscolhida;
+        }
+
+        static string ExibirMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("Jogo de Adivinhação");
+            Console.WriteLine("-------------------------------------");
+
+            Console.WriteLine("Escolha um nível de dificuldade:");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("1 - Fácil (10 tentativas)");
+            Console.WriteLine("2 - Normal (5 tentativas)");
+            Console.WriteLine("3 - Difícil (3 tentativas)");
+
+            Console.Write("Digite sua escolha de dificuldade: ");
+            string opcaoDificuldade = Console.ReadLine();
+
+            return opcaoDificuldade;
         }
     }
 }
