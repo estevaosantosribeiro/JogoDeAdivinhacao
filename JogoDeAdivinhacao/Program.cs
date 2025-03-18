@@ -1,4 +1,4 @@
-﻿    namespace JogoDeAdivinhacao
+﻿namespace JogoDeAdivinhacao
 {
     internal class Program
     {
@@ -27,8 +27,8 @@
                     totalDeTentativas = 10;
                 else if (opcaoDificuldade == "2")
                     totalDeTentativas = 5;
-                else if (opcaoDificuldade == "3") 
-                    totalDeTentativas = 3;    
+                else if (opcaoDificuldade == "3")
+                    totalDeTentativas = 3;
 
                 // gerar um número secreto aleatório
                 Random geradorNumeros = new Random();
@@ -79,7 +79,7 @@
                     Console.Write("Aperte ENTER para continuar...");
                     Console.ReadLine();
                 }
-                
+
                 Console.Write("Deseja continuar? (S/N): ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
